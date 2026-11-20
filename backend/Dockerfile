@@ -1,5 +1,7 @@
 FROM python:3.12-slim
 # Użytkownik systemowy bez hasła i bez katalogu domowego - na nim działa aplikacja
+# Łączy obraz w GHCR z repozytorium projektu (uprawnienia pakietu dziedziczone z repozytorium)
+LABEL org.opencontainers.image.source="https://github.com/dawidkro/breach-checker"
 RUN useradd --system --no-create-home appuser
 WORKDIR /app
 COPY requirements.txt .
